@@ -1,0 +1,38 @@
+SwipeRefreshLayoutDemo
+======================
+
+Google official pull to refresh widgets(SwipeRefreshLayout) demo.
+
+## SwipeRefreshLayout
+
+SwipeRefreshLayout was added in support v4 library after version 19.1. 
+
+Version 19.1 effect
+
+<img src="http://stormzhang.github.io/image/SwipeRefreshLayout.gif" />
+
+Version 20 effect with Android 5.0
+
+<img src="http://ww3.sinaimg.cn/bmiddle/5d430977gw1elk5r7sksug20b40jrb29.gif" />
+
+
+## About Me
+
+[See My Blog](http://stormzhang.github.io/about.html)
+
+License
+============
+
+    Copyright 2014 Storm Zhang
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.

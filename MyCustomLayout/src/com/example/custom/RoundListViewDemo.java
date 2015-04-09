@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.widget.SimpleAdapter;
 
 /**
- * 自定义下拉刷新测试类
+ * 自定义圆角边ListView
  * @author chenjy
  * 2015.3.18
  */

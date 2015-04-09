@@ -23,7 +23,6 @@ import com.example.custom.R;
 
 /**
  * 自定下拉刷新 上拉加载
- * 
  * @author chenjy
  * @create: 2015.3.20
  * 

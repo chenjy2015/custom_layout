@@ -13,7 +13,7 @@ import java.util.Locale;
 
 public class Utils {
 
-	public static String getCurrentTime(String format) {
+	public static String getCurrentTimeFormat(String format) {
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.getDefault());
 		String currentTime = sdf.format(date);
@@ -21,6 +21,6 @@ public class Utils {
 	}
 
 	public static String getCurrentTime() {
-		return getCurrentTime("yyyy-MM-dd  HH:mm:ss");
+		return getCurrentTimeFormat("yyyy-MM-dd  HH:mm:ss");
 	}
 }

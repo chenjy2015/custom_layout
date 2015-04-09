@@ -51,7 +51,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 
 	public int headViewHeight;
 	public int footViewHeight;
-	public int ImageViewWidth = 10;// 默认移动Item宽度
+	public int ImageViewWidth = 50;// 默认移动Item的宽度
 
 	private int firstVisibleItem;
 	private int scrollState;
@@ -141,7 +141,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 
 	/** 初始化设置头部控件伸展动画 */
 	public void initAnimation() {
-		mTReverseAnimation1 = new TranslateAnimation(100, 0, 0, 0);
+		mTReverseAnimation1 = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 100.0f, Animation.RELATIVE_TO_SELF, 0.0f, 0, 0, 0, 0);
 		mTReverseAnimation1.setInterpolator(new LinearInterpolator());
 		mTReverseAnimation1.setDuration(300);
 		mTReverseAnimation1.setRepeatMode(Animation.RESTART);
@@ -150,7 +150,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 		mTReverseAnimation1.setFillAfter(true);
 		mTReverseAnimation1.setAnimationListener(this);
 		
-		mTReverseAnimation2 = new TranslateAnimation(0, 100, 0, 0);
+		mTReverseAnimation2 = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_SELF, 100.f, 0, 0, 0, 0);
 		mTReverseAnimation2.setInterpolator(new LinearInterpolator());
 		mTReverseAnimation2.setDuration(300);
 		mTReverseAnimation2.setRepeatMode(Animation.RESTART);
@@ -288,7 +288,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 		return ImageViewWidth;
 	}
 
-	/** 设置头部移动Item宽度 */
+	/** 设置刷新控件的宽度 */
 	public void setImageViewWidth(int imageViewWidth) {
 		ImageViewWidth = imageViewWidth;
 	}
@@ -355,7 +355,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 		headIv1.getLayoutParams().width = ImageViewWidth;
 		headIv2.getLayoutParams().width = ImageViewWidth;
 		headIv2.startAnimation(mTReverseAnimation2);
-		headIv1.startAnimation(mTReverseAnimation1);
+		//headIv1.startAnimation(mTReverseAnimation1);
 	}
 
 	private void stopRefresh() {
@@ -374,11 +374,11 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 	/** 用于下拉刷新结束后的回调 */
 	public void onRefreshComplete() {
 		// 启动动画 头部布局慢慢上滑 隐退
-		TranslateAnimation mTransAnima = new TranslateAnimation(0, 0,
-				mPullMaxHeight, -mPullMaxHeight);
-		mTransAnima.setDuration(500);
-		mTransAnima.setInterpolator(new LinearInterpolator());
-		headView.startAnimation(mTransAnima);
+//		TranslateAnimation mTransAnima = new TranslateAnimation(0, 0,
+//				mPullMaxHeight, -mPullMaxHeight);
+//		mTransAnima.setDuration(500);
+//		mTransAnima.setInterpolator(new LinearInterpolator());
+//		headView.startAnimation(mTransAnima);
 		// 重置头部布局
 		isStartRefresh = false;
 		mTReverseAnimation1.reset();

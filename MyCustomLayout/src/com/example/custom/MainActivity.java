@@ -10,10 +10,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
+import android.view.ViewParent;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 public class MainActivity extends Activity implements
@@ -26,7 +30,6 @@ public class MainActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 		mListView = (ListView) findViewById(R.id.listview);
 		mListView.setAdapter(new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, getData()));
@@ -76,12 +79,15 @@ public class MainActivity extends Activity implements
 			long id) {
 		// TODO Auto-generated method stub
 		Intent intent = new Intent();
-		if((position % 2) == 0){
+		if(position== 0){
 //			intent.setClass(getApplicationContext(), AutoPrefreshListViewDemo.class);
 			intent.setClass(getApplicationContext(), AutoLinePrefreshListViewDemo.class);
-			
-		}else{
+		}else if(position == 1){
 			intent.setClass(getApplicationContext(), RoundListViewDemo.class);
+		}else if(position == 2){
+			intent.setClass(getApplicationContext(), CustomLayoutActivity.class);
+		}else if(position == 3){
+			intent.setClass(getApplicationContext(), RotatePicBrowserActivity.class);
 		}
 		startActivity(intent);
 	}

@@ -37,6 +37,16 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name=".CustomLayoutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".RotatePicBrowserActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

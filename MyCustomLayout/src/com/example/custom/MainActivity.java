@@ -88,6 +88,8 @@ public class MainActivity extends Activity implements
 			intent.setClass(getApplicationContext(), CustomLayoutActivity.class);
 		}else if(position == 3){
 			intent.setClass(getApplicationContext(), RotatePicBrowserActivity.class);
+		}else {
+			intent.setClass(getApplicationContext(), CustomLayoutActivity.class);
 		}
 		startActivity(intent);
 	}

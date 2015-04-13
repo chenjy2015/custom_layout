@@ -6,6 +6,12 @@
     android:background="#E1E6F6"
     android:orientation="vertical" >
 
+    <com.example.custom.view.CustomButton
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" />
+
     <com.example.custom.view.CustomFlowLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >

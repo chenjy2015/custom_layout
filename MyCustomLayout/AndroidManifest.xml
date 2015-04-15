@@ -30,12 +30,12 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".AutoPrefreshListViewDemo"
+            android:name=".AutoPrefreshListViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".AutoLinePrefreshListViewDemo"
+            android:name=".AutoLinePrefreshListViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
@@ -56,6 +56,11 @@
         </activity>
         <activity
             android:name=".DragGridActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".SwipeRefreshLayoutActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>

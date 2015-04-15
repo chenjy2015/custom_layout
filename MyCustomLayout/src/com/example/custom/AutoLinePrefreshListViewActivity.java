@@ -16,7 +16,7 @@ import com.example.custom.listview.AutoListView;
 import com.example.custom.listview.adapter.ListViewAdapter;
 
 
-public class AutoLinePrefreshListViewDemo extends Activity implements OnRefreshListenner,OnLoadListenner{
+public class AutoLinePrefreshListViewActivity extends Activity implements OnRefreshListenner,OnLoadListenner{
 
 	private AutoLineListView mListView;
 	private ListViewAdapter adapter;

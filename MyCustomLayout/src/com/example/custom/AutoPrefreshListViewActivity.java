@@ -21,7 +21,7 @@ import com.example.custom.listview.adapter.ListViewAdapter;
  * chenjy
  */
 
-public class AutoPrefreshListViewDemo extends Activity implements OnRefreshListener,
+public class AutoPrefreshListViewActivity extends Activity implements OnRefreshListener,
 		OnLoadListener {
 
 	private AutoListView lstv;

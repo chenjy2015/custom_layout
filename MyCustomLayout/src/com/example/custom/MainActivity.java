@@ -19,6 +19,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.OverScroller;
 
 public class MainActivity extends Activity implements
 		SwipeRefreshLayout.OnRefreshListener, OnItemClickListener {
@@ -37,7 +38,11 @@ public class MainActivity extends Activity implements
 
 		mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		mSwipeLayout.setOnRefreshListener(this);
-		mSwipeLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+//		mSwipeLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+//				android.R.color.holo_green_light,
+//				android.R.color.holo_orange_light,
+//				android.R.color.holo_red_light);
+		mSwipeLayout.setColorScheme(android.R.color.holo_blue_bright,
 				android.R.color.holo_green_light,
 				android.R.color.holo_orange_light,
 				android.R.color.holo_red_light);
@@ -50,8 +55,8 @@ public class MainActivity extends Activity implements
 		list.add("RotatePicBrowserActivity");
 		list.add("ExpendLayoutActivity");
 		list.add("DragGridActivity");
-		list.add("item7");
-		list.add("item8");
+		list.add("SwipeRefreshLayoutActivity");
+		list.add("AutoPrefreshListViewDemo");
 		return list;
 	}
 
@@ -82,8 +87,7 @@ public class MainActivity extends Activity implements
 		// TODO Auto-generated method stub
 		Intent intent = new Intent();
 		if(position== 0){
-//			intent.setClass(getApplicationContext(), AutoPrefreshListViewDemo.class);
-			intent.setClass(getApplicationContext(), AutoLinePrefreshListViewDemo.class);
+			intent.setClass(getApplicationContext(), AutoLinePrefreshListViewActivity.class);
 		}else if(position == 1){
 			intent.setClass(getApplicationContext(), RoundListViewDemo.class);
 		}else if(position == 2){
@@ -94,6 +98,10 @@ public class MainActivity extends Activity implements
 			intent.setClass(getApplicationContext(), ExpendLayoutActivity.class);
 		}else if(position == 5){
 			intent.setClass(getApplicationContext(), DragGridActivity.class);
+		}else if(position == 6){
+			intent.setClass(getApplicationContext(), SwipeRefreshLayoutActivity.class);
+		}else if(position == 7){
+			intent.setClass(getApplicationContext(), AutoPrefreshListViewActivity.class);
 		}
 		startActivity(intent);
 	}

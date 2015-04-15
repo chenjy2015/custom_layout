@@ -33,7 +33,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 	public View headView;
 	public View footView;
 	/** headView */
-	public ImageView headIv1, headIv2;
+	public TextView headIv1, headIv2;
 	/** footView */
 	private ImageView arrow;
 	private TextView noData;
@@ -93,8 +93,8 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 
 		inflater = LayoutInflater.from(getContext());
 		headView = inflater.inflate(R.layout.item_autolist_head, null);
-		headIv1 = (ImageView) headView.findViewById(R.id.headIv1);
-		headIv2 = (ImageView) headView.findViewById(R.id.headIv2);
+		headIv1 = (TextView) headView.findViewById(R.id.headIv1);
+		headIv2 = (TextView) headView.findViewById(R.id.headIv2);
 
 		inflater = LayoutInflater.from(getContext());
 		footView = inflater.inflate(R.layout.listview_footer, null);

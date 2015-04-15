@@ -44,12 +44,14 @@ public class MainActivity extends Activity implements
 	}
 
 	private ArrayList<String> getData() {
-		list.add("Hello");
-		list.add("This is stormzhang");
-		list.add("An Android Developer");
-		list.add("Love Open Source");
-		list.add("My GitHub: stormzhang");
-		list.add("weibo: googdev");
+		list.add("AutoLinePrefreshListViewDemo");
+		list.add("RoundListViewDemo");
+		list.add("CustomLayoutActivity");
+		list.add("RotatePicBrowserActivity");
+		list.add("ExpendLayoutActivity");
+		list.add("DragGridActivity");
+		list.add("item7");
+		list.add("item8");
 		return list;
 	}
 
@@ -88,8 +90,10 @@ public class MainActivity extends Activity implements
 			intent.setClass(getApplicationContext(), CustomLayoutActivity.class);
 		}else if(position == 3){
 			intent.setClass(getApplicationContext(), RotatePicBrowserActivity.class);
-		}else {
-			intent.setClass(getApplicationContext(), CustomLayoutActivity.class);
+		}else if(position == 4){
+			intent.setClass(getApplicationContext(), ExpendLayoutActivity.class);
+		}else if(position == 5){
+			intent.setClass(getApplicationContext(), DragGridActivity.class);
 		}
 		startActivity(intent);
 	}

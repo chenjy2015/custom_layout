@@ -7,6 +7,8 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="20" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -44,6 +46,16 @@
         </activity>
         <activity
             android:name=".RotatePicBrowserActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ExpendLayoutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".DragGridActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>

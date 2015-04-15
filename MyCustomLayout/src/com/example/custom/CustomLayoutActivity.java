@@ -2,7 +2,9 @@ package com.example.custom;
 
 import com.example.custom.view.CustomButton;
 
+import android.R.color;
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -26,6 +28,6 @@ public class CustomLayoutActivity extends Activity {
 
 		btn = (CustomButton) findViewById(R.id.btn);
 		btn.setText("hello world");
-		btn.setTextSize(20);
+		btn.setTextColor(Color.BLUE);
 	}
 }

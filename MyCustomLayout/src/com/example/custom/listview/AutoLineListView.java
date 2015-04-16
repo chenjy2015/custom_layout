@@ -140,11 +140,10 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 
 	/** 初始化设置头部控件伸展动画 */
 	public void initAnimation() {
-		mTReverseAnimation1 = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 100.0f, Animation.RELATIVE_TO_SELF, 0.0f, 0, 0, 0, 0);
+		mTReverseAnimation1 = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 100.f, Animation.RELATIVE_TO_SELF, 0.0f, 0, 0, 0, 0);
 		mTReverseAnimation1.setInterpolator(new LinearInterpolator());
 		mTReverseAnimation1.setDuration(300);
 		mTReverseAnimation1.setRepeatMode(Animation.RESTART);
-		mTReverseAnimation1.setAnimationListener(this);
 		mTReverseAnimation1.setRepeatCount(1);
 		mTReverseAnimation1.setFillAfter(true);
 		mTReverseAnimation1.setAnimationListener(this);
@@ -353,8 +352,8 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 	private void startRefresh() {
 		headIv1.getLayoutParams().width = ImageViewWidth;
 		headIv2.getLayoutParams().width = ImageViewWidth;
+		headIv1.startAnimation(mTReverseAnimation1);
 		headIv2.startAnimation(mTReverseAnimation2);
-		//headIv1.startAnimation(mTReverseAnimation1);
 	}
 
 	private void stopRefresh() {
@@ -392,7 +391,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 		rotateLoad.reset();
 		rotateReverse.reset();
 		arrow.clearAnimation();
-		drawableViewBottomPadding(footViewHeight);
+		drawableViewBottomPadding(-footViewHeight);
 		footView.setVisibility(View.GONE);
 	}
 

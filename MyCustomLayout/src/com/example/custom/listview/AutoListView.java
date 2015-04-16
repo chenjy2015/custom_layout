@@ -51,7 +51,7 @@ public class AutoListView extends ListView implements OnScrollListener {
 	private TextView tip;
 	private TextView lastUpdate;
 	private ImageView arrow;
-	private ImageView headIv1,headIv2;
+	private TextView headIv1,headIv2;
 	private ProgressBar refreshing;
 
 	private TextView noData;
@@ -164,8 +164,8 @@ public class AutoListView extends ListView implements OnScrollListener {
 		refreshing = (ProgressBar) header.findViewById(R.id.refreshing);
 		
 		headerview = inflater.inflate(R.layout.item_autolist_head, null);
-		headIv1 = (ImageView) headerview.findViewById(R.id.headIv1);
-		headIv2 = (ImageView) headerview.findViewById(R.id.headIv2);
+		headIv1 = (TextView) headerview.findViewById(R.id.headIv1);
+		headIv2 = (TextView) headerview.findViewById(R.id.headIv2);
 		headerContextInitialWidth =headIv1.getMeasuredWidth();
 
 		// 为listview添加头部和尾部，并进行初始化

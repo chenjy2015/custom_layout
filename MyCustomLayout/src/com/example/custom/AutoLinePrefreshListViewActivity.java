@@ -12,6 +12,10 @@ import android.os.Message;
 import com.example.custom.listview.AutoLineListView;
 import com.example.custom.listview.AutoLineListView.OnLoadListenner;
 import com.example.custom.listview.AutoLineListView.OnRefreshListenner;
+//import com.example.custom.listview.AutoLineListView2.OnLoadListenner;
+//import com.example.custom.listview.AutoLineListView2.OnRefreshListenner;
+
+import com.example.custom.listview.AutoLineListView2;
 import com.example.custom.listview.AutoListView;
 import com.example.custom.listview.adapter.ListViewAdapter;
 
@@ -19,6 +23,7 @@ import com.example.custom.listview.adapter.ListViewAdapter;
 public class AutoLinePrefreshListViewActivity extends Activity implements OnRefreshListenner,OnLoadListenner{
 
 	private AutoLineListView mListView;
+//	private AutoLineListView2 mListView;
 	private ListViewAdapter adapter;
 	private List<String> data = new ArrayList<String>();;
 	private static int maxPullHeight = 120;

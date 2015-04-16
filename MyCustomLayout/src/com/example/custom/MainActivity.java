@@ -5,6 +5,7 @@
 package com.example.custom;
 
 import java.util.ArrayList;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class MainActivity extends Activity implements
 	private ListView mListView;
 	private ArrayList<String> list = new ArrayList<String>();
 
+	@SuppressLint("NewApi")
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
@@ -42,6 +44,7 @@ public class MainActivity extends Activity implements
 //				android.R.color.holo_green_light,
 //				android.R.color.holo_orange_light,
 //				android.R.color.holo_red_light);
+		mSwipeLayout.setScrollBarSize(50);
 		mSwipeLayout.setColorScheme(android.R.color.holo_blue_bright,
 				android.R.color.holo_green_light,
 				android.R.color.holo_orange_light,
@@ -70,7 +73,7 @@ public class MainActivity extends Activity implements
 				list.addAll(tempList);
 				handler.sendEmptyMessage(0);
 			}
-		}, 5000);
+		}, 2000);
 	}
 
 	public Handler handler = new Handler() {

@@ -56,7 +56,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 	private int scrollState;
 	private int pageSize = 10;
 	public int startY;// 记录用户按下位置
-	public int mPullMaxHeight = 100;// 下拉最大值默认60dp
+	public int mPullMaxHeight = 40;// 下拉最大值默认30dp
 	public int state;// 标识当前状态
 	public static boolean isStartRefresh;// 标识是否在刷新状态
 	private boolean isLoading;// 标识是否正在加载数据
@@ -70,6 +70,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 	public static final int REFRESHING = 3;// 正在刷新
 	public static final int RELEAST = 4;// 上推 放弃刷新
 
+	
 	public AutoLineListView(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
@@ -90,7 +91,8 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 
 	public void init() {
 		// TODO Auto-generated constructor stub
-
+		//mPullMaxHeight = dip2px(getContext(), mPullMaxHeight);
+		
 		inflater = LayoutInflater.from(getContext());
 		headView = inflater.inflate(R.layout.item_autolist_head, null);
 		headIv1 = (TextView) headView.findViewById(R.id.headIv1);
@@ -104,15 +106,16 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 		more = (TextView) footView.findViewById(R.id.more);
 		loading = (ProgressBar) footView.findViewById(R.id.loading);
 
-		measureView(headView);
-		measureView(footView);
+		//measureView(headView);
+		//measureView(footView);
 		headViewHeight = headView.getMeasuredHeight();
 		footViewHeight = footView.getMeasuredHeight();
 		// ImageViewWidth = headIv1.getMeasuredWidth();
 		this.addHeaderView(headView);
 		this.addFooterView(footView);
+		drawableViewTopPadding(-headViewHeight);
 		drawableViewBottomPadding(-footViewHeight);
-		footView.setVisibility(View.GONE);// 隐藏底部View
+//		footView.setVisibility(View.GONE);// 隐藏底部View
 		this.setOnScrollListener(this);
 		initAnimation();
 
@@ -188,9 +191,9 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 			if (firstVisibleItem == 0) {
 				// drawableViewWidth(getCurrentPullScale(height));
 				drawableViewWidth(height);
-				// drawableViewTopPadding(height);
+				drawableViewTopPadding(height);
 				// setState(ev, y);
-			} else if (isBottom && state == PULL) {
+			} else if (isBottom) {
 				drawableViewBottomPadding(height);
 			}
 			break;
@@ -202,6 +205,9 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 				onRefresh();
 			} else if (isLoading && isBottom) {
 				onLoad();
+			} else {
+				onRefreshComplete();
+				onLoadComplete();
 			}
 			break;
 		}
@@ -282,6 +288,13 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 		}
 	}
 
+	
+	/** dp换算 */
+	public int dip2px(Context context, float dipValue) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (dipValue * scale + 0.5f);
+	}
+	
 	public int getImageViewWidth() {
 		return ImageViewWidth;
 	}
@@ -293,28 +306,35 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 
 	/** 设置下拉刷新最大长度值 */
 	public void setMaxPullHeight(int height) {
-		mPullMaxHeight = height;
+		mPullMaxHeight = dip2px(getContext(), height);
 	}
 
 	/** 重新绘制头部View距离顶部高度 */
 	public void drawableViewTopPadding(int topPadding) {
 		if (topPadding > mPullMaxHeight) {
-			topPadding = mPullMaxHeight;
+			topPadding = dip2px(getContext(), mPullMaxHeight)/2;
 		}
-		headView.setPadding(headView.getPaddingLeft(), topPadding,
-				headView.getPaddingRight(), headView.getPaddingBottom());
-		headView.invalidate();
+//		headView.setPadding(headView.getPaddingLeft(), topPadding,
+//				headView.getPaddingRight(), headView.getPaddingBottom());
+//		headView.invalidate();
+		if(headView.getLayoutParams() != null){
+			headView.getLayoutParams().height = topPadding;
+			headView.invalidate();
+		}
 	}
 
 	/** 重新绘制底部View距离底部高度 */
 	public void drawableViewBottomPadding(int bottomPadding) {
 		if (bottomPadding > mPullMaxHeight) {
-			bottomPadding = mPullMaxHeight;
+			bottomPadding = dip2px(getContext(), mPullMaxHeight)/2;
 		}
-		footView.setPadding(headView.getPaddingLeft(),
-				footView.getPaddingTop(), headView.getPaddingRight(),
-				bottomPadding);
-		footView.invalidate();
+//		footView.setPadding(headView.getPaddingLeft(),
+//				bottomPadding, headView.getPaddingRight(),
+//				headView.getPaddingBottom());
+		if(footView.getLayoutParams() != null){
+			footView.getLayoutParams().height = bottomPadding;
+			footView.invalidate();
+		}
 	}
 
 	/** 重新绘制头部View中的ImageView宽度 */
@@ -382,6 +402,7 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 		mTReverseAnimation1.reset();
 		mTReverseAnimation2.reset();
 		drawableViewWidth(ImageViewWidth);
+		drawableViewTopPadding(-headViewHeight);
 		stopRefresh();
 	}
 
@@ -392,7 +413,6 @@ public class AutoLineListView extends ListView implements OnScrollListener,
 		rotateReverse.reset();
 		arrow.clearAnimation();
 		drawableViewBottomPadding(-footViewHeight);
-		footView.setVisibility(View.GONE);
 	}
 
 	public void setResultSize(int resultSize) {

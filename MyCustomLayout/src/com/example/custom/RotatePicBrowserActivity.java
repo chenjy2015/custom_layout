@@ -113,13 +113,13 @@ public class RotatePicBrowserActivity extends Activity {
      * 初始化图片列表数据。 
      */  
     private void initPics() {  
-    	PictureVO p0 = new PictureVO("loading0", R.drawable.loading_0);
-    	PictureVO p1 = new PictureVO("loading1", R.drawable.loading_1);
-    	PictureVO p2 = new PictureVO("loading2", R.drawable.loading_2);
-    	PictureVO p3 = new PictureVO("loading3", R.drawable.loading_3);
-    	PictureVO p4 = new PictureVO("loading4", R.drawable.loading_4);
-    	PictureVO p5 = new PictureVO("loading5", R.drawable.loading_5);
-    	PictureVO p6 = new PictureVO("loading6", R.drawable.loading_6);
+    	PictureVO p0 = new PictureVO("loading0", R.drawable.com_tencent_icon);
+    	PictureVO p1 = new PictureVO("loading1", R.drawable.p02);
+    	PictureVO p2 = new PictureVO("loading2", R.drawable.p03);
+    	PictureVO p3 = new PictureVO("loading3", R.drawable.p04);
+    	PictureVO p4 = new PictureVO("loading4", R.drawable.p05);
+    	PictureVO p5 = new PictureVO("loading5", R.drawable.p06);
+    	PictureVO p6 = new PictureVO("loading6", R.drawable.p07);
     	picList.add(p0);
     	picList.add(p1);
     	picList.add(p2);

@@ -64,6 +64,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
+         <activity
+            android:name=".ScaleImageViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

@@ -60,6 +60,7 @@ public class MainActivity extends Activity implements
 		list.add("DragGridActivity");
 		list.add("SwipeRefreshLayoutActivity");
 		list.add("AutoPrefreshListViewDemo");
+		list.add("SacleImageViewDemo");
 		return list;
 	}
 
@@ -105,6 +106,8 @@ public class MainActivity extends Activity implements
 			intent.setClass(getApplicationContext(), SwipeRefreshLayoutActivity.class);
 		}else if(position == 7){
 			intent.setClass(getApplicationContext(), AutoPrefreshListViewActivity.class);
+		}else if(position == 8){
+			intent.setClass(getApplicationContext(), ScaleImageViewActivity.class);
 		}
 		startActivity(intent);
 	}

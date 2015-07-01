@@ -53,4 +53,13 @@
     <!-- A really bright Holo shade of blue -->
     <color name="holo_blue_bright">#ff00ddff</color>
 
+    
+    <!-- swipe menu -->
+    <!-- drop down list header font color -->
+    <color name="drop_down_list_header_font_color">#27b2f8</color>
+    <!-- drop down list header second font color -->
+    <color name="drop_down_list_header_second_font_color">#27b2f8</color>
+    <!-- drop down list footer font color -->
+    <color name="drop_down_list_footer_font_color">#27b2f8</color>
+    
 </resources>

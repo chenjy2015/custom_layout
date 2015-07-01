@@ -2,9 +2,6 @@ package com.example.custom;
 
 import java.util.ArrayList;
 
-import com.example.custom.listview.AutoLineListView;
-
-import android.R.style;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,7 +10,6 @@ import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Scroller;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;

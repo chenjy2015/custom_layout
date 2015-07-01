@@ -62,6 +62,7 @@ public class MainActivity extends Activity implements
 		list.add("AutoPrefreshListViewDemo");
 		list.add("SacleImageViewDemo");
 		list.add("HroizontialListViewActivity");
+		list.add("SwpteMenuDropDownListViewActivity");
 		return list;
 	}
 
@@ -111,6 +112,8 @@ public class MainActivity extends Activity implements
 			intent.setClass(getApplicationContext(), ScaleImageViewActivity.class);
 		}else if(position == 9){
 			intent.setClass(getApplicationContext(), HroizontialListViewActivity.class);
+		}else if(position == 10){
+			intent.setClass(getApplicationContext(), SwpteMenuDropDownListViewActivity.class);
 		}
 		startActivity(intent);
 	}

@@ -1,4 +1,4 @@
-package com.example.custom.view;
+package com.example.custom.view.viewgroup;
 
 /**
  * 自定义ViewGroup

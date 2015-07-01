@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.example.custom.view.DragGridView
+    <com.example.custom.view.widget.DragGridView
         android:id="@+id/dragGridView"
         android:listSelector="@android:color/transparent"
         android:layout_width="match_parent"
@@ -15,6 +15,6 @@
         android:stretchMode="columnWidth"  
   	    android:gravity="center" 
         android:numColumns="3" >
-    </com.example.custom.view.DragGridView>
+    </com.example.custom.view.widget.DragGridView>
 
 </RelativeLayout>

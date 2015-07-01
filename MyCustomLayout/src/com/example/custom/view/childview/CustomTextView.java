@@ -1,4 +1,4 @@
-package com.example.custom.view;
+package com.example.custom.view.childview;
 
 /**
  * 自定义TextView

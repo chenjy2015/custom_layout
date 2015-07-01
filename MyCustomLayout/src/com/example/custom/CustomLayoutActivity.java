@@ -1,6 +1,6 @@
 package com.example.custom;
 
-import com.example.custom.view.CustomButton;
+import com.example.custom.view.childview.CustomButton;
 
 import android.R.color;
 import android.app.Activity;

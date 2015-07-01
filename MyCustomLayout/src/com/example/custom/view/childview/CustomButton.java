@@ -1,4 +1,4 @@
-package com.example.custom.view;
+package com.example.custom.view.childview;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

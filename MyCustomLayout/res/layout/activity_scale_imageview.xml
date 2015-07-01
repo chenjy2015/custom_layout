@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.example.custom.view.ScaleImageView
+    <com.example.custom.view.widget.ScaleImageView
         android:id="@+id/iv"
         android:layout_width="300dp"
         android:layout_height="300dp"
@@ -12,6 +12,6 @@
         android:layout_marginTop="50dp"
         android:scaleType="matrix"
         android:src="@drawable/com_tencent_icon" >
-    </com.example.custom.view.ScaleImageView>
+    </com.example.custom.view.widget.ScaleImageView>
 
 </LinearLayout>

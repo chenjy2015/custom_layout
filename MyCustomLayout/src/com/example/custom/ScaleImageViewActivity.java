@@ -3,7 +3,7 @@ package com.example.custom;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.example.custom.view.ScaleImageView;
+import com.example.custom.view.widget.ScaleImageView;
 
 /**
  * 可缩放图片展示

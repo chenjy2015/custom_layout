@@ -1,4 +1,4 @@
-package com.example.custom.view;
+package com.example.custom.view.viewgroup;
 
 import java.util.ArrayList;
 import java.util.List;

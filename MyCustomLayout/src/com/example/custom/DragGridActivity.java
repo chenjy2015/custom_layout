@@ -8,8 +8,9 @@ import java.util.List;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.SimpleAdapter;
-import com.example.custom.view.DragGridView;
-import com.example.custom.view.DragGridView.OnChanageListener;
+
+import com.example.custom.view.widget.DragGridView;
+import com.example.custom.view.widget.DragGridView.OnChanageListener;
 
 
 /***

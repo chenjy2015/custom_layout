@@ -61,6 +61,7 @@ public class MainActivity extends Activity implements
 		list.add("SwipeRefreshLayoutActivity");
 		list.add("AutoPrefreshListViewDemo");
 		list.add("SacleImageViewDemo");
+		list.add("HroizontialListViewActivity");
 		return list;
 	}
 
@@ -108,6 +109,8 @@ public class MainActivity extends Activity implements
 			intent.setClass(getApplicationContext(), AutoPrefreshListViewActivity.class);
 		}else if(position == 8){
 			intent.setClass(getApplicationContext(), ScaleImageViewActivity.class);
+		}else if(position == 9){
+			intent.setClass(getApplicationContext(), HroizontialListViewActivity.class);
 		}
 		startActivity(intent);
 	}
